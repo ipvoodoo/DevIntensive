@@ -4,15 +4,15 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     
     <!--Sizes-->
-    <item name="size_small_24">24dp</item>
-    <item name="size_medium_56">56dp</item>
-    <item name="size_large_72">72dp</item>
+    <dimen name="size_small_24">24dp</dimen>
+    <dimen name="size_medium_56">56dp</dimen>
+    <dimen name="size_large_72">72dp</dimen>
     
     <!--Spaces-->
-    <item name="spacing_small_8">8dp</item>
-    <item name="spacing_normal_16">16dp</item>
-    <item name="spacing_medial_24">24dp</item>
-    <item name="spacing_medium_32">32dp</item>
-    <item name="spacing_large_56">56dp</item>
-    <item name="spacing_larger_72">72dp</item>
+    <dimen name="spacing_small_8">8dp</dimen>
+    <dimen name="spacing_normal_16">16dp</dimen>
+    <dimen name="spacing_medial_24">24dp</dimen>
+    <dimen name="spacing_medium_32">32dp</dimen>
+    <dimen name="spacing_large_56">56dp</dimen>
+    <dimen name="spacing_larger_72">72dp</dimen>
 </resources>
