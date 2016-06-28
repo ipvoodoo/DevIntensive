@@ -1,371 +1,446 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-                                            xmlns:tools="http://schemas.android.com/tools"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content">
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/navigation_drawer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="ui.activities.MainActivity">
 
-    <LinearLayout
-        android:id="@+id/activity_main"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/main_coordinator_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_primary"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentScrim="@color/color_primary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <ImageView
+                    android:id="@+id/user_photo_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_image_size"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/userphoto"/>
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:theme="@style/AppTheme.PopupOverlay"
+                    android:titleTextColor="@color/white"
+                    app:layout_collapseMode="pin"/>
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:id="@+id/activity_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:background="@color/grey">
+
+                    <TextView
+                        android:id="@+id/tv_strings_of_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_count_strings_of_code"
+                        android:layout_centerHorizontal="true"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Написано строк кода"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/tv_projects"
+                        android:layout_alignBottom="@+id/tv_projects"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginLeft="@dimen/spacing_normal_16"
+                        android:layout_marginStart="@dimen/spacing_normal_16"
+                        android:gravity="center"
+                        android:text="Рейтинг"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"/>
+
+                    <ImageView
+                        android:id="@+id/iv_divider1"
+                        android:layout_width="1dp"
+                        android:layout_height="@dimen/size_big_72"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_toEndOf="@+id/tv_rating"
+                        android:layout_toRightOf="@+id/tv_rating"
+                        android:background="@drawable/vertical_divider"/>
+
+                    <TextView
+                        android:id="@+id/tv_projects"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_count_of_projects"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginStart="13dp"
+                        android:layout_toEndOf="@+id/iv_divider2"
+                        android:layout_toRightOf="@+id/iv_divider2"
+                        android:gravity="center"
+                        android:text="Проектов"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_count_of_projects"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/tv_strings_of_code"
+                        android:layout_alignEnd="@+id/tv_projects"
+                        android:layout_alignLeft="@+id/tv_projects"
+                        android:layout_alignRight="@+id/tv_projects"
+                        android:layout_alignStart="@+id/tv_projects"
+                        android:gravity="center"
+                        android:text="5"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_count_strings_of_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/tv_strings_of_code"
+                        android:layout_alignStart="@+id/tv_strings_of_code"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/iv_divider2"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="5"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"/>
+
+                    <ImageView
+                        android:id="@+id/iv_divider2"
+                        android:layout_width="1dp"
+                        android:layout_height="@dimen/size_big_72"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_toEndOf="@+id/tv_strings_of_code"
+                        android:layout_toRightOf="@+id/tv_strings_of_code"
+                        android:background="@drawable/vertical_divider"/>
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/tv_rating"
+                        android:layout_alignLeft="@+id/tv_rating"
+                        android:layout_alignStart="@+id/tv_rating"
+                        android:layout_toLeftOf="@+id/iv_divider1"
+                        android:gravity="center"
+                        android:text="5"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"/>
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_small_8"
+                    android:layout_marginTop="@dimen/spacing_small_8"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/icon.left"
+                        android:src="@drawable/ic_local_phone_black_24dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/size_big_72"
+                        android:layout_marginLeft="@dimen/spacing_medial_24"
+                        android:layout_marginRight="@dimen/spacing_normal_16"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/et_user_phone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:focusable="false"
+                                android:hint="@string/et_phone_number"
+                                android:inputType="phone"
+                                android:text="+7 (926)111-11-11"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/grey"/>
+
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        style="@style/icon.right"
+                        android:src="@drawable/ic_phone_in_talk_black_24dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size"
+                    android:layout_marginLeft="@dimen/spacing_larger_72"
+                    android:background="@color/grey_light"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_small_8"
+                    android:layout_marginTop="@dimen/spacing_small_8"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/icon.left"
+                        android:src="@drawable/ic_mail_black_24dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/size_big_72"
+                        android:layout_marginLeft="@dimen/spacing_medial_24"
+                        android:layout_marginRight="@dimen/spacing_normal_16"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/et_user_mail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:focusable="false"
+                                android:hint="@string/et_email"
+                                android:text="myMail"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/grey"/>
+
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        style="@style/icon.right"
+                        android:src="@drawable/ic_send_black_24dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size"
+                    android:layout_marginLeft="@dimen/spacing_larger_72"
+                    android:background="@color/grey_light"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_small_8"
+                    android:layout_marginTop="@dimen/spacing_small_8"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/icon.left"
+                        android:src="@drawable/ic_vk_social_logotype"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/size_big_72"
+                        android:layout_marginLeft="@dimen/spacing_medial_24"
+                        android:layout_marginRight="@dimen/spacing_normal_16"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/et_user_Vk"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:focusable="false"
+                                android:hint="@string/et_vk"
+                                android:text="https://vk.com/ciklodol"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/grey"/>
+
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        style="@style/icon.right"
+                        android:src="@drawable/ic_remove_red_eye_black_24dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size"
+                    android:layout_marginLeft="@dimen/spacing_larger_72"
+                    android:background="@color/grey_light"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_small_8"
+                    android:layout_marginTop="@dimen/spacing_small_8"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/icon.left"
+                        android:src="@drawable/ic_github_logo"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/size_big_72"
+                        android:layout_marginLeft="@dimen/spacing_medial_24"
+                        android:layout_marginRight="@dimen/spacing_normal_16"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/et_user_git"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:focusable="false"
+                                android:hint="@string/et_repo"
+                                android:text="https://github.com/ipvoodoo"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/grey"/>
+
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        style="@style/icon.right"
+                        android:src="@drawable/ic_remove_red_eye_black_24dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size"
+                    android:layout_marginLeft="@dimen/spacing_larger_72"
+                    android:background="@color/grey_light"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_small_8"
+                    android:layout_marginTop="@dimen/spacing_small_8"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/icon.left"
+                        android:src="@drawable/ic_person_black_24dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/size_big_72"
+                        android:layout_marginLeft="@dimen/spacing_medial_24"
+                        android:layout_marginRight="@dimen/spacing_normal_16"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/et_user_about"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:focusable="false"
+                                android:hint="@string/et_about"
+                                android:text="Я обычный чувак"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/grey"/>
+
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size"
+                    android:layout_marginLeft="@dimen/spacing_larger_72"
+                    android:background="@color/grey_light"/>
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/fab_right_space"
+            android:src="@drawable/ic_mode_edit_black_24dp"
+            app:layout_anchor="@id/appbar_layout"
+            app:layout_anchorGravity="bottom|right"
+            />
+    </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="1"
-        tools:context="devintensive.softdesign.com.devintensive.ui.activities.MainActivity">
+        android:layout_gravity="left"
+        app:headerLayout="@layout/drawer_header"
+        app:menu="@menu/drawer_menu">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:background="@color/grey">
+    </android.support.design.widget.NavigationView>
 
-
-            <TextView
-                android:id="@+id/tv_strings_of_code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_count_strings_of_code"
-                android:layout_centerHorizontal="true"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Написано строк кода"
-                android:textColor="@color/white"
-                android:textSize="14sp"/>
-
-            <TextView
-                android:id="@+id/tv_rating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/tv_projects"
-                android:layout_alignBottom="@+id/tv_projects"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="@dimen/spacing_normal_16"
-                android:layout_marginStart="@dimen/spacing_normal_16"
-                android:gravity="center"
-                android:text="Рейтинг"
-                android:textColor="@color/white"
-                android:textSize="14sp"/>
-
-            <ImageView
-                android:id="@+id/iv_divider1"
-                android:layout_width="1dp"
-                android:layout_height="@dimen/size_big_72"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
-                android:layout_toEndOf="@+id/tv_rating"
-                android:layout_toRightOf="@+id/tv_rating"
-                android:background="@drawable/vertical_divider"/>
-
-            <TextView
-                android:id="@+id/tv_projects"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_count_of_projects"
-                android:layout_marginLeft="13dp"
-                android:layout_marginStart="13dp"
-                android:layout_toEndOf="@+id/iv_divider2"
-                android:layout_toRightOf="@+id/iv_divider2"
-                android:gravity="center"
-                android:text="Проектов"
-                android:textColor="@color/white"
-                android:textSize="14sp"/>
-
-            <TextView
-                android:id="@+id/tv_count_of_projects"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/tv_strings_of_code"
-                android:layout_alignEnd="@+id/tv_projects"
-                android:layout_alignLeft="@+id/tv_projects"
-                android:layout_alignRight="@+id/tv_projects"
-                android:layout_alignStart="@+id/tv_projects"
-                android:gravity="center"
-                android:text="5"
-                android:textColor="@color/white"
-                android:textSize="24sp"/>
-
-            <TextView
-                android:id="@+id/tv_count_strings_of_code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tv_strings_of_code"
-                android:layout_alignStart="@+id/tv_strings_of_code"
-                android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/iv_divider2"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="5"
-                android:textColor="@color/white"
-                android:textSize="24sp"/>
-
-            <ImageView
-                android:id="@+id/iv_divider2"
-                android:layout_width="1dp"
-                android:layout_height="@dimen/size_big_72"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
-                android:layout_toEndOf="@+id/tv_strings_of_code"
-                android:layout_toRightOf="@+id/tv_strings_of_code"
-                android:background="@drawable/vertical_divider"/>
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/tv_rating"
-                android:layout_alignLeft="@+id/tv_rating"
-                android:layout_alignStart="@+id/tv_rating"
-                android:layout_toLeftOf="@+id/iv_divider1"
-                android:gravity="center"
-                android:text="5"
-                android:textColor="@color/white"
-                android:textSize="24sp"/>
-        </RelativeLayout>
+</android.support.v4.widget.DrawerLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/spacing_small_8"
-            android:layout_marginTop="@dimen/spacing_small_8"
-            android:orientation="horizontal">
-
-            <ImageView
-                style="@style/icon.left"
-                android:src="@drawable/ic_local_phone_black_24dp"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="@dimen/size_big_72"
-                android:layout_marginLeft="@dimen/spacing_medial_24"
-                android:layout_marginRight="@dimen/spacing_normal_16"
-                android:layout_weight="1"
-                android:gravity="bottom"
-                android:orientation="vertical">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:enabled="false"
-                        android:focusable="false"
-                        android:hint="@string/et_phone_number"
-                        android:inputType="phone"
-                        android:text="+7 (926)111-11-11"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/grey"/>
-
-                </android.support.design.widget.TextInputLayout>
-            </LinearLayout>
-
-            <ImageView
-                style="@style/icon.right"
-                android:src="@drawable/ic_phone_in_talk_black_24dp"/>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/line_size"
-            android:layout_marginLeft="@dimen/spacing_larger_72"
-            android:background="@color/grey_light"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/spacing_small_8"
-            android:layout_marginTop="@dimen/spacing_small_8"
-            android:orientation="horizontal">
-
-            <ImageView
-                style="@style/icon.left"
-                android:src="@drawable/ic_mail_black_24dp"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="@dimen/size_big_72"
-                android:layout_marginLeft="@dimen/spacing_medial_24"
-                android:layout_marginRight="@dimen/spacing_normal_16"
-                android:layout_weight="1"
-                android:gravity="bottom"
-                android:orientation="vertical">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:enabled="false"
-                        android:focusable="false"
-                        android:hint="@string/et_email"
-                        android:text="myMail"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/grey"/>
-
-                </android.support.design.widget.TextInputLayout>
-            </LinearLayout>
-
-            <ImageView
-                style="@style/icon.right"
-                android:src="@drawable/ic_send_black_24dp"/>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/line_size"
-            android:layout_marginLeft="@dimen/spacing_larger_72"
-            android:background="@color/grey_light"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/spacing_small_8"
-            android:layout_marginTop="@dimen/spacing_small_8"
-            android:orientation="horizontal">
-
-            <ImageView
-                style="@style/icon.left"
-                android:src="@drawable/ic_vk_social_logotype"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="@dimen/size_big_72"
-                android:layout_marginLeft="@dimen/spacing_medial_24"
-                android:layout_marginRight="@dimen/spacing_normal_16"
-                android:layout_weight="1"
-                android:gravity="bottom"
-                android:orientation="vertical">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:enabled="false"
-                        android:focusable="false"
-                        android:hint="@string/et_vk"
-                        android:text="https://vk.com/ciklodol"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/grey"/>
-
-                </android.support.design.widget.TextInputLayout>
-            </LinearLayout>
-
-            <ImageView
-                style="@style/icon.right"
-                android:src="@drawable/ic_remove_red_eye_black_24dp"/>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/line_size"
-            android:layout_marginLeft="@dimen/spacing_larger_72"
-            android:background="@color/grey_light"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/spacing_small_8"
-            android:layout_marginTop="@dimen/spacing_small_8"
-            android:orientation="horizontal">
-
-            <ImageView
-                style="@style/icon.left"
-                android:src="@drawable/ic_github_logo"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="@dimen/size_big_72"
-                android:layout_marginLeft="@dimen/spacing_medial_24"
-                android:layout_marginRight="@dimen/spacing_normal_16"
-                android:layout_weight="1"
-                android:gravity="bottom"
-                android:orientation="vertical">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:enabled="false"
-                        android:focusable="false"
-                        android:hint="@string/et_repo"
-                        android:text="https://github.com/ipvoodoo"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/grey"/>
-
-                </android.support.design.widget.TextInputLayout>
-            </LinearLayout>
-
-            <ImageView
-                style="@style/icon.right"
-                android:src="@drawable/ic_remove_red_eye_black_24dp"/>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/line_size"
-            android:layout_marginLeft="@dimen/spacing_larger_72"
-            android:background="@color/grey_light"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/spacing_small_8"
-            android:layout_marginTop="@dimen/spacing_small_8"
-            android:orientation="horizontal">
-
-            <ImageView
-                style="@style/icon.left"
-                android:src="@drawable/ic_person_black_24dp"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="@dimen/size_big_72"
-                android:layout_marginLeft="@dimen/spacing_medial_24"
-                android:layout_marginRight="@dimen/spacing_normal_16"
-                android:layout_weight="1"
-                android:gravity="bottom"
-                android:orientation="vertical">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:enabled="false"
-                        android:focusable="false"
-                        android:hint="@string/et_about"
-                        android:text="Я обычный чувак"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/grey"/>
-
-                </android.support.design.widget.TextInputLayout>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/line_size"
-            android:layout_marginLeft="@dimen/spacing_larger_72"
-            android:background="@color/grey_light"/>
-
-    </LinearLayout>
-</android.support.v4.widget.NestedScrollView>
 
