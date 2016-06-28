@@ -21,7 +21,6 @@ import java.util.List;
 import devintensive.softdesign.com.devintensive.R;
 import devintensive.softdesign.com.devintensive.data.managers.DataManager;
 import devintensive.softdesign.com.devintensive.utils.ConstantManager;
-import devintensive.softdesign.com.devintensive.utils.RoundedAvatarDrawable;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     public static final String TAG = ConstantManager.TAG_PREFIX + "Main Activity";
@@ -40,7 +39,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private EditText mUserGit;
     private EditText mUserBio;
     private List<EditText> mUserInfoViews;
-    private RoundedAvatarDrawable mRoundedAvatarDrawable;
 
 
     @Override
