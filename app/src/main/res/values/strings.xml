@@ -5,4 +5,8 @@
     <string name="et_vk">VK</string>
     <string name="et_repo">Github</string>
     <string name="et_about">About me</string>
+    <string name="menu_my_profile">My profile</string>
+    <string name="menu_team">Team</string>
+    <string name="drawer_user_name">Max Bagryantsev</string>
+    <string name="drawer_user_mail">ipvoodoo@gmail.com</string>
 </resources>
