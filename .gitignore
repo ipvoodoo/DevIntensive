@@ -30,6 +30,7 @@
 *.iml
 
 # OS-specific files
+
 .DS_Store
 .DS_Store?
 ._*
@@ -43,3 +44,4 @@ local.properties
 
 # Android Studio Navigation editor temp files
 .navigation
+#
