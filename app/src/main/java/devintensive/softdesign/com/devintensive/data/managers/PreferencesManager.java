@@ -1,6 +1,7 @@
 package devintensive.softdesign.com.devintensive.data.managers;
 
 import android.content.SharedPreferences;
+import android.net.Uri;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,5 +35,16 @@ public class PreferencesManager {
         userFields.add(mSharedPreferences.getString(ConstantManager.USER_GIT_KEY, "null"));
         userFields.add(mSharedPreferences.getString(ConstantManager.USER_BIO_KEY, "null"));
         return userFields;
+    }
+
+    public void saveUserPhoto(Uri uri) {
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        editor.putString(ConstantManager.USER_PHOTO_KEY, uri.toString());
+        editor.apply();
+    }
+
+    public Uri loadUserPhoto() {
+        // TODO: 05.07.2016 неправильный путь к ресурсам 
+        return Uri.parse(mSharedPreferences.getString(ConstantManager.USER_PHOTO_KEY, "android.resource://devintensive.softdesign.com.devintensive/res/drawable/header_bg"));
     }
 }

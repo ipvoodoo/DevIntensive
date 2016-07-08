@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    tools:context="devintensive.softdesign.com.devintensive.ui.activities.LoginActivity">
+
+    <include
+        android:id="@+id/login_dialog"
+        layout="@layout/login_dialog"
+        android:layout_width="@dimen/dialog_with"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/dialog_fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/login_dialog"
+        android:layout_alignRight="@+id/login_dialog"
+        android:layout_alignTop="@+id/login_dialog"
+        android:layout_gravity="center"
+        android:layout_marginRight="-28dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/ic_add_white_24dp"/>
+
+
+</RelativeLayout>
