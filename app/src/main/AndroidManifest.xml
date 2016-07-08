@@ -2,6 +2,8 @@
 <manifest package="devintensive.softdesign.com.devintensive"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="ANDROID.PERMISSION.INTERNET"/>
+
     <application
         android:name=".utils.DevintensiveApplication"
         android:allowBackup="true"
@@ -10,13 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activities.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+            <!--<intent-filter>-->
+                <!--&lt;!&ndash;<action android:name="android.intent.action.MAIN"/>&ndash;&gt;-->
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+                <!--&lt;!&ndash;<category android:name="android.intent.category.LAUNCHER"/>&ndash;&gt;-->
+            <!--</intent-filter>-->
         </activity>
         <activity android:name=".ui.activities.BaseActivity">
+        </activity>
+        <activity android:name=".ui.activities.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 
