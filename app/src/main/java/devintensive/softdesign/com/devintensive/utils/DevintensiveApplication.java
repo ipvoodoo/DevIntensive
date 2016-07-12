@@ -5,9 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-/**
- * Created by max on 27.06.16.
- */
+
 
 public class DevintensiveApplication extends Application {
 
