@@ -7,6 +7,15 @@
     <string name="et_about">О себе</string>
     <string name="menu_my_profile">Мой профиль</string>
     <string name="menu_team">Команда</string>
-    <string name="drawer_user_name">Max Bagryantsev</string>
+    <string name="drawer_user_name">Макс Багрянцев</string>
     <string name="drawer_user_mail">ipvoodoo@gmail.com</string>
+    <string name="user_profile_placeholder_image">Изменить фотографию профиля</string>
+    <string name="user_profile_dialog_gallery">Загрузить из галлереи</string>
+    <string name="user_profile_dialog_camera">Сделать снимок</string>
+    <string name="user_profile_dialog_cancel">Отмена</string>
+    <string name="user_profile_dialog_title">Изменить фотографию профиля</string>
+    <string name="user_profile_chooser_message">Выберите фото</string>
+    <string name="select_email_client">Выберите приложение</string>
+    <string name="dialog_title_enter">Войти</string>
+    <string name="et_password">Пароль</string>
 </resources>
