@@ -1,131 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.NestedScrollView
-    xmlns:mask="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    app:layout_behavior=".ui.behaviors.CustomNestedScrollBehavior"
     >
 
     <LinearLayout
 
-        android:id="@+id/activity_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="1">
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:background="@color/grey">
-
-            <TextView
-                android:id="@+id/tv_strings_of_code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_count_strings_of_code"
-                android:layout_centerHorizontal="true"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Написано строк кода"
-                android:textColor="@color/white"
-                android:textSize="14sp"/>
-
-            <TextView
-                android:id="@+id/tv_rating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/tv_projects"
-                android:layout_alignBottom="@+id/tv_projects"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="@dimen/spacing_normal_16"
-                android:layout_marginStart="@dimen/spacing_normal_16"
-                android:gravity="center"
-                android:text="Рейтинг"
-                android:textColor="@color/white"
-                android:textSize="14sp"/>
-
-            <ImageView
-                android:id="@+id/iv_divider1"
-                android:layout_width="1dp"
-                android:layout_height="@dimen/size_big_72"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
-                android:layout_toEndOf="@+id/tv_rating"
-                android:layout_toRightOf="@+id/tv_rating"
-                android:background="@drawable/divider"/>
-
-            <TextView
-                android:id="@+id/tv_projects"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_count_of_projects"
-                android:layout_marginLeft="13dp"
-                android:layout_marginStart="13dp"
-                android:layout_toEndOf="@+id/iv_divider2"
-                android:layout_toRightOf="@+id/iv_divider2"
-                android:gravity="center"
-                android:text="Проектов"
-                android:textColor="@color/white"
-                android:textSize="14sp"/>
-
-            <TextView
-                android:id="@+id/tv_count_of_projects"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/tv_strings_of_code"
-                android:layout_alignEnd="@+id/tv_projects"
-                android:layout_alignLeft="@+id/tv_projects"
-                android:layout_alignRight="@+id/tv_projects"
-                android:layout_alignStart="@+id/tv_projects"
-                android:gravity="center"
-                android:text="5"
-                android:textColor="@color/white"
-                android:textSize="24sp"/>
-
-            <TextView
-                android:id="@+id/tv_count_strings_of_code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tv_strings_of_code"
-                android:layout_alignStart="@+id/tv_strings_of_code"
-                android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/iv_divider2"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="5"
-                android:textColor="@color/white"
-                android:textSize="24sp"/>
-
-            <ImageView
-                android:id="@+id/iv_divider2"
-                android:layout_width="1dp"
-                android:layout_height="@dimen/size_big_72"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
-                android:layout_toEndOf="@+id/tv_strings_of_code"
-                android:layout_toRightOf="@+id/tv_strings_of_code"
-                android:background="@drawable/divider"/>
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/tv_rating"
-                android:layout_alignLeft="@+id/tv_rating"
-                android:layout_alignStart="@+id/tv_rating"
-                android:layout_toLeftOf="@+id/iv_divider1"
-                android:gravity="center"
-                android:text="5"
-                android:textColor="@color/white"
-                android:textSize="24sp"/>
-        </RelativeLayout>
+        android:orientation="vertical">
 
 
         <LinearLayout
